@@ -35,7 +35,7 @@ public class ServerStart  implements Runnable{
 		server.setPort(9199);
 		server.setNoSystemExit(true);
 		server.setDatabaseName(0, "firston");
-		server.setDatabasePath(0,"/home/rbrossi/FIRSTON/CRMDB");
+		server.setDatabasePath(0,"/Users/rbrossi/Documents/GitHub/rbrossi-firston-java/CRMDB");
 		//server.setDatabasePath(0,".");
 		server.setErrWriter(new PrintWriter(System.out));
 		server.setLogWriter(new PrintWriter(System.out));

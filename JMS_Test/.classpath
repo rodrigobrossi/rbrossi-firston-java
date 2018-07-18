@@ -1,57 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.generic.runtimeTarget/JBoss v5.0"/>
-	<classpathentry kind="lib" path="/home/MTS/applications/maximo/lib/j2ee.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/concurrent.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/dom4j.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/getopt.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/javassist.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jaxb-impl.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-asintegration-core.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-asintegration-jmx.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-asintegration-mc.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-deployers.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-jboss5.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-aop-mc-int.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-bootstrap.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-classloader.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-classloading.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-classloading-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-classloading-vfs.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-common-core.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-dependency.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-client.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-client-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-core.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-core-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-impl.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-structure-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-vfs.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-deployers-vfs-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-j2se.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-jmx.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-kernel.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-logbridge.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-logging-jdk.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-main.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-managed.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-mbeans.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-mdr.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-metatype.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-profileservice-spi.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-reflect.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-system.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-system-jmx.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-vfs.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/jboss-xml-binding.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/log4j-boot.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/osgi.core.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/trove.jar"/>
-	<classpathentry kind="lib" path="/home/rbrossi/Base/JBOSS/jboss-5.1.0.GA/lib/wstx.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-logging-jdk.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-logging-spi.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-logmanager.jar"/>
+	<classpathentry kind="lib" path="lib/jnp-client-4.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
           "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
@@ -8,66 +7,29 @@
 	<session-factory>
 		<!-- Driver Configuration -->
 
-		<!--
-			property
-			name="connection.datasource">java:comp/env/jdbc/Medicamp</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.driver_class">org.postgresql.Driver</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.driver_class">com.inet.tds.TdsDriver</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property
-		-->
+		<!-- property name="connection.datasource">java:comp/env/jdbc/Medicamp</property -->
+		<!-- property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property -->
+		<!-- property name="hibernate.connection.driver_class">org.postgresql.Driver</property -->
+		<!-- property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property -->
+		<!-- property name="hibernate.connection.driver_class">com.inet.tds.TdsDriver</property -->
+		<!-- property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property -->
 		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 
 		<!-- URL Configuration -->
-		<!--
-			property
-			name="hibernate.connection.url">jdbc:hsqldb:hsql://127.0.0.1:9199/firston</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.url">jdbc:hsqldb:C:\eclipse\workspace\FIRSTON\CRMDB\lib</property
-		-->
+		<!-- property name="hibernate.connection.url">jdbc:hsqldb:hsql://127.0.0.1:9199/firston</property -->
+		<!-- property name="hibernate.connection.url">jdbc:hsqldb:C:\eclipse\workspace\FIRSTON\CRMDB\lib</property -->
 
 		<!-- SQL Server URL -->
-		<!--
-			property
-			name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1615/OMEGAFIT</property
-		-->
-		<!--
-			property
-			name="hibernate.connection.url">jdbc:inetdae7a:RBROSSI:1615?database=OMEGAFIT</property
-		-->
+		<!-- property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1615/OMEGAFIT</property -->
+		<!-- property name="hibernate.connection.url">jdbc:inetdae7a:RBROSSI:1615?database=OMEGAFIT</property -->
 		<property name="hibernate.connection.url">jdbc:sqlserver://RBROSSI:1615;databaseName=OMEGAFIT</property>
 
 		<!-- Postgres URL -->
-		<!--
-			property
-			name="hibernate.connection.url">jdbc:postgresql:firston</property
-		-->
+		<!-- property name="hibernate.connection.url">jdbc:postgresql:firston</property -->
 
 		<!-- Postgress login -->
-		<!--
-			property name="hibernate.connection.username">postgres</property
-		-->
-		<!--
-			property name="hibernate.connection.password">jeca@2029</property
-		-->
+		<!-- property name="hibernate.connection.username">postgres</property -->
+		<!-- property name="hibernate.connection.password">jeca@2029</property -->
 		<!-- SQL Server login -->
 		<property name="hibernate.connection.username">sde</property>
 		<property name="hibernate.conection.password">sde</property>
@@ -79,24 +41,16 @@
 		<property name="hibernate.use_sql_comments">false</property>
 
 		<!-- Postgres dialect -->
-		<!--
-			property
-			name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property
-		-->
+		<!-- property name="dialect">net.sf.hibernate.dialect.PostgreSQLDialect</property -->
 		<!-- SQL Server Dialect -->
 		<property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
-		<!--
-			property
-			name="dialect">net.sf.hibernate.dialect.HSQLDialect</property
-		-->
-		<property name="transaction.factory_class">	org.hibernate.transaction.JDBCTransactionFactory</property>
+		<!-- property name="dialect">net.sf.hibernate.dialect.HSQLDialect</property -->
+		<property name="transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory</property>
 		<property name="hibernate.cglib.use_reflection_optimizer">true</property>
-		<!--
-			property
-			name="hibernate.cache.provider_class">org.hibernate.cache.CacheProvider</property
-		-->
+		<!-- property name="hibernate.cache.provider_class">org.hibernate.cache.CacheProvider</property -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		<property name="hibernate.max_fetch_depth">	3</property>
+		<property name="hibernate.max_fetch_depth"> 3</property>
 		<property name="use_outer_join">false</property>
 		<property name="show_sql">true</property>
 
