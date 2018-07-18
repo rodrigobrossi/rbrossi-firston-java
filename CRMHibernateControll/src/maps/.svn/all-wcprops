@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/40JcPruo4uA3w/!svn/ver/15/CRMHibernateControll/src/maps
+END
+CrmRamoAtividade.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmRamoAtividade.hbm.xml
+END
+CrmProfissaoCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmProfissaoCliente.hbm.xml
+END
+CrmUsuarios.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmUsuarios.hbm.xml
+END
+CrmRegistroVisita.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmRegistroVisita.hbm.xml
+END
+CrmEmpresas.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmEmpresas.hbm.xml
+END
+CrmVendas.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmVendas.hbm.xml
+END
+CrmLazerCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmLazerCliente.hbm.xml
+END
+CrmFilhos.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmFilhos.hbm.xml
+END
+CrmEsporteCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmEsporteCliente.hbm.xml
+END
+CrmProvidencias.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmProvidencias.hbm.xml
+END
+CrmDatasComemorativas.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmDatasComemorativas.hbm.xml
+END
+CrmPremiacoes.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmPremiacoes.hbm.xml
+END
+CrmNetos.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmNetos.hbm.xml
+END
+CrmHistoricoContato.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmHistoricoContato.hbm.xml
+END
+CrmProduto.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmProduto.hbm.xml
+END
+CrmClubeCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmClubeCliente.hbm.xml
+END
+CrmVendedores.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmVendedores.hbm.xml
+END
+CrmCrencaCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmCrencaCliente.hbm.xml
+END
+CrmRelacionamento.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmRelacionamento.hbm.xml
+END
+CrmTipoRelacao.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmTipoRelacao.hbm.xml
+END
+CrmEstiloCliente.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmEstiloCliente.hbm.xml
+END
+CrmContato.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/src/maps/CrmContato.hbm.xml
+END

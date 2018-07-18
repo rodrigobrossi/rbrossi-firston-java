@@ -1,0 +1,1 @@
+select * from CRM_PRODUTO 

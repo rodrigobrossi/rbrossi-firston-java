@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib
+END
+postgresql-8.4-701.jdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/56/CRMHibernateControll/lib/postgresql-8.4-701.jdbc4.jar
+END
+jtds-1.2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jtds-1.2.5.jar
+END
+commons-logging-1.1-dev.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/commons-logging-1.1-dev.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/dom4j-1.6.1.jar
+END
+jta.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/jta.jar
+END
+hibernate-search-analyzers-3.4.0.Alpha1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate-search-analyzers-3.4.0.Alpha1.jar
+END
+commons-io-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/commons-io-1.4.jar
+END
+lucene-analyzers-3.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/lucene-analyzers-3.0.3.jar
+END
+ehcache-0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/ehcache-0.6.jar
+END
+jgroups-2.8.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jgroups-2.8.0.GA.jar
+END
+hibernate-core-3.6.1.Final.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate-core-3.6.1.Final.jar
+END
+log4j-1.2.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/log4j-1.2.7.jar
+END
+sqljdbc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/sqljdbc.jar
+END
+jms-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jms-1.1.jar
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/commons-lang.jar
+END
+jboss-transaction-api-1.0.1.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jboss-transaction-api-1.0.1.GA.jar
+END
+i18nlog-1.0.10.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/i18nlog-1.0.10.jar
+END
+marshalling-api-1.2.3.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/marshalling-api-1.2.3.GA.jar
+END
+infinispan-lucene-directory-4.2.1.CR3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/infinispan-lucene-directory-4.2.1.CR3.jar
+END
+hibernate-tools.bkp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate-tools.bkp
+END
+commons-configuration-1.0-dev-3.20030607.194155.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/commons-configuration-1.0-dev-3.20030607.194155.jar
+END
+lucene-core-3.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/lucene-core-3.0.3.jar
+END
+cglib-2.0-rc2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/cglib-2.0-rc2.jar
+END
+sqljdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/sqljdbc4.jar
+END
+javassist.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/javassist.jar
+END
+infinispan-core-4.2.1.CR3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/infinispan-core-4.2.1.CR3.jar
+END
+jta-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jta-1.1.jar
+END
+river-1.2.3.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/river-1.2.3.GA.jar
+END
+dom4j-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/dom4j-1.4.jar
+END
+hsqldb-1.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/hsqldb-1.7.1.jar
+END
+hibernate2.bkp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate2.bkp
+END
+commons-collections-2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/commons-collections-2.1.jar
+END
+commons-collections-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/commons-collections-3.1.jar
+END
+commons-codec-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/commons-codec-1.4.jar
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/antlr-2.7.6.jar
+END
+jsr250-api-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jsr250-api-1.0.jar
+END
+lucene-snowball-3.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/lucene-snowball-3.0.3.jar
+END
+slf4j-api-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/slf4j-api-1.6.1.jar
+END
+hibernate-commons-annotations-3.2.0.Final.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate-commons-annotations-3.2.0.Final.jar
+END
+lucene-collation-3.0.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/lucene-collation-3.0.3.jar
+END
+jgroups-2.12.0.CR4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/jgroups-2.12.0.CR4.jar
+END
+hibernate-jpa-2.0-api-1.0.0.Final.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar
+END
+rhq-pluginAnnotations-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/rhq-pluginAnnotations-3.0.1.jar
+END
+oscache-2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/40JcPruo4uA3w/!svn/ver/3/CRMHibernateControll/lib/oscache-2.0.jar
+END
+Opta.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/Opta.jar
+END
+slf4j-log4j12-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/40JcPruo4uA3w/!svn/ver/95/CRMHibernateControll/lib/slf4j-log4j12-1.6.1.jar
+END

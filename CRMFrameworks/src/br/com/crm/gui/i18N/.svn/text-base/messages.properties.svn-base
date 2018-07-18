@@ -1,0 +1,44 @@
+# Interface
+msg.gui.mainframe.title=CRM - FirstOn relationship 1.0
+msg.gui.mainframe.profile=BI in action
+msg.gui.mainframe.navigator=Navigator
+msg.gui.mainframe.information=Products Result View
+msg.gui.mainframe.status=Agenda
+msg.gui.mainframe.product=Contact Profile
+msg.gui.mainframe.login=Login
+
+# Menu
+msg.gui.mainframe.file=Arquivo
+msg.gui.mainframe.exit=Sair
+msg.gui.mainframe.close=Fechar
+msg.gui.mainframe.cadastro=Cadastro
+msg.gui.mainframe.pf=Pessoa Física
+msg.gui.mainframe.pj=Pessoa Jurídica
+msg.gui.mainframe.usr=Usuário
+msg.gui.mainframe.aux=Auxiliares
+msg.gui.mainframe.tools=Ferramentas
+msg.gui.mainframe.idioms=Idiomas
+msg.gui.mainframe.ptg=Portugues
+msg.gui.mainframe.eng=Ingles
+msg.gui.mainframe.about=Ajuda
+msg.gui.mainframe.about.text=Sobre CRM FirstOn Relationship 1.0
+
+# Copyright
+msg.gui.mainframe.copyright.title=CRM FirstOn Relationship 1.0
+msg.gui.mainframe.copyright.version=Versão: 1.0.0
+msg.gui.mainframe.copyright=Copyright (C) FirstOn Relationship 1.0 2006.
+msg.gui.mainframe.copyright.msg=Todos os direitos Reservados.
+msg.gui.mainframe.exit.msg=Você realmente deseja sair?
+
+
+# Common
+common.main.splash.image=resources/images/medicamp_splash_screen.png
+common.main.about.image=../util/resources/images/medicamp_about.gif
+common.main.title.image=../util/resources/images/crm_relationship.ico
+common.main.login.image=../util/resources/images/crm_relationship.ico
+common.main.logo.image=../util/resources/images/medicamp_about.gif
+common.result.search.image=../util/resources/images/crm_search.ico
+
+# Search Panel 
+search.panel.search=Search
+search.panel.clean=Clean search!

@@ -1,0 +1,81 @@
+
+<project name="RSD-Dashbard Interfa" default="init" basedir=".">
+	<description>
+        RSD - Rwanda Smart Dashboard (Subscriber sample) 
+		Enterprise Service BUS client.
+    </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="." />
+	<property name="build" location="build" />
+	<property name="classpath" location="lib" />
+	<property name="release" location="release" />
+	<!-- Create the time stamp -->
+	<tstamp>
+		<format property="time.stamp" pattern="yyyy-MM-dd_HH:mm:ss" />
+	</tstamp>
+	<!-- Create the build directory structure used by compile -->
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement location="lib/jboss-client.jar" />
+				<pathelement location="lib/postgresql-9.4-1201.jdbc4.jar" />
+			</classpath>
+		</javac>
+	</target>
+	<target name="release" depends="compile" description="generate the distribution">
+		<jar destfile="${release}/ESBInterface.jar" basedir="${build}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Class-Path" value="jboss-client.jar postgresql-9.4-1201.jdbc4.jar" />
+				<attribute name="Main-Class" value="br.ibm.com.rsd.ESBInterface" />
+			</manifest>
+		</jar>
+		<copy file="lib/jboss-client.jar" todir="${release}">
+		</copy>
+		<copy file="lib/postgresql-9.4-1201.jdbc4.jar" todir="${release}">
+		</copy>
+		<copy file="config.properties" todir="${release}">
+		</copy>
+
+	</target>
+
+	<target name="javadoc" depends="release">
+		<javadoc destdir="release/docs/api" author="true" version="true" use="true" windowtitle="Rwanda Smart Dashboard">
+
+			<fileset dir="src" defaultexcludes="yes">
+				<include name="br/ibm/com/**" />
+				<!-- exclude name="com/dummy/test/doc-files/**"/ -->
+			</fileset>
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement location="lib/jboss-client.jar" />
+				<pathelement location="lib/postgresql-9.4-1201.jdbc4.jar" />
+			</classpath>
+			<doctitle>
+				<![CDATA[<h1>Rwanda Smart Dashboard</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>Copyright &#169; 2015 Corporate Service Corps(IBM). All Rights Reserved.</i>]]></bottom>
+	<tag name="todo" scope="all" description="To do:" />
+	<group title="RSD Packages" packages="br.ibm.com.*" />
+	<link offline="true" href="http://docs.oracle.com/javase/7/docs/api/" packagelistLoc="/temp" />
+	<link href="http://docs.oracle.com/javase/7/docs/api/" />
+</javadoc>
+</target>
+<target name="prod" depends="javadoc">
+
+<zip destfile="release/RSD-Subscriber-${time.stamp}.zip" basedir="release" />
+</target>
+
+<target name="clean" description="clean up">
+<!-- Delete the ${build} and ${release} directory trees -->
+</target>
+</project>

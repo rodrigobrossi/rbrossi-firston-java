@@ -1,0 +1,145 @@
+END
+DatasComemorativasCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/DatasComemorativasCTR.java
+END
+ProvidenciasCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/ProvidenciasCTR.java
+END
+PremiacoesCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/PremiacoesCTR.java
+END
+LazerContatosCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/LazerContatosCTR.java
+END
+NetosCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/NetosCTR.java
+END
+AbstractDataBaseCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/40JcPruo4uA3w/!svn/ver/96/CRMFirstOn/src/br/com/crm/control/AbstractDataBaseCTR.java
+END
+ProdutoCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/ProdutoCTR.java
+END
+VendedoresCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/VendedoresCTR.java
+END
+ClubeClienteCRT.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/ClubeClienteCRT.java
+END
+CrencaClienteCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/CrencaClienteCTR.java
+END
+RelacionamentoCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/RelacionamentoCTR.java
+END
+CTRInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/CTRInterface.java
+END
+HistoricoCotatosCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/HistoricoCotatosCTR.java
+END
+TipoRelacaoCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/TipoRelacaoCTR.java
+END
+EstiloClienteCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/EstiloClienteCTR.java
+END
+ContatoCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/ContatoCTR.java
+END
+ProfissaoClienteCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/ProfissaoClienteCTR.java
+END
+RamoAtividadeCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/RamoAtividadeCTR.java
+END
+UsuariosCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/40JcPruo4uA3w/!svn/ver/96/CRMFirstOn/src/br/com/crm/control/UsuariosCTR.java
+END
+RegistroVisitaCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/RegistroVisitaCTR.java
+END
+EmpresasCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/40JcPruo4uA3w/!svn/ver/96/CRMFirstOn/src/br/com/crm/control/EmpresasCTR.java
+END
+VendasCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/VendasCTR.java
+END
+FilhosCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/FilhosCTR.java
+END
+EsporteClienteCTR.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/40JcPruo4uA3w/!svn/ver/51/CRMFirstOn/src/br/com/crm/control/EsporteClienteCTR.java
+END

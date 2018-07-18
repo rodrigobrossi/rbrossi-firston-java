@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="br.com.crm.db.CrmProfissaoCliente" schema="dbo" table="CRM_PROFISSAO_CLIENTE">
+<id column="PFC_ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="PFC_TITULO" length="256" name="pfcTitulo" type="java.lang.String"/>
+<property column="PFC_DIA_COMEMORATIVO" length="10" name="pfcDiaComemorativo" type="java.lang.String"/>
+<property column="PFC_MES_COMEMORATIVO" length="10" name="pfcMesComemorativo" type="java.lang.String"/>
+<property column="PFC_OBSERVACAO" length="256" name="pfcObservacao" type="java.lang.String"/>
+<property column="PFC_DCA_RELACIONAMENTO" length="256" name="pfcDcaRelacionamento" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

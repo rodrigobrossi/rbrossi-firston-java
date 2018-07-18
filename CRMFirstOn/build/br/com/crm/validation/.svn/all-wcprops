@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/40JcPruo4uA3w/!svn/ver/20/CRMFirstOn/src/br/com/crm/validation
+END
+ValidatorConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/40JcPruo4uA3w/!svn/ver/101/CRMFirstOn/src/br/com/crm/validation/ValidatorConstants.java
+END
+ValidationRules.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/40JcPruo4uA3w/!svn/ver/101/CRMFirstOn/src/br/com/crm/validation/ValidationRules.java
+END
+ValidatiorEval.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/40JcPruo4uA3w/!svn/ver/101/CRMFirstOn/src/br/com/crm/validation/ValidatiorEval.java
+END
+ValidatorDecorator.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/40JcPruo4uA3w/!svn/ver/101/CRMFirstOn/src/br/com/crm/validation/ValidatorDecorator.java
+END

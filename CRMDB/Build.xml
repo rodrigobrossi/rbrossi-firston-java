@@ -1,0 +1,44 @@
+
+<project name="CRM-DB" default="init" basedir=".">
+	<description>
+        CRM - DB Build Generation
+    </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="classpath" location="lib" />
+	<property name="release" location="release" />
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the release directory structure used by compile -->
+		<mkdir dir="${release}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="${classpath}" />
+			</classpath>
+		</javac>
+	</target>
+	<target name="release" depends="compile" description="generate the distribution">
+		<jar destfile="${release}/CRM-DB.jar" basedir="${build}" >
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Main-Class" value="br.com.crm.db.Application" />
+				<attribute name="Class-Path" value="hsqldb.jar"/>
+				<section name="br/com/crm/db/Application.class">
+					<attribute name="Sealed" value="true" />
+				</section>
+			</manifest>
+		</jar>
+		
+		<copy  file="lib/hsqldb.jar" todir="${release}" flatten="true"/>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${release} directory trees -->
+	</target>
+</project>

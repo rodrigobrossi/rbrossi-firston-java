@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dao>
+	<table>
+		<name>CLIENT</name>
+		<classname>br.com.bar.firston.dbbeans.ClientDAO</classname>
+	</table>
+	<table>
+		<name>BARUSER</name>
+		<classname>br.com.bar.firston.dbbeans.BarUserDAO</classname>
+	</table>
+	<table>
+		<name>CREDENTIALS</name>
+		<classname>br.com.bar.firston.dbbeans.CredentialsDAO</classname>
+	</table>
+</dao>

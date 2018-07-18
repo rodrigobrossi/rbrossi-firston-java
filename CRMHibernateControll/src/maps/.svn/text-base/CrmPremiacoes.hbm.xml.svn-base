@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="br.com.crm.db.CrmPremiacoes" schema="dbo" table="CRM_PREMIACOES">
+<id column="PRM_ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="PRM_DESCRICAO" length="256" name="prmDescricao" type="java.lang.String"/>
+<property column="PRM_QUANTIDADE" length="256" name="prmQuantidade" type="java.lang.String"/>
+<property column="PRM_QUALIFICACAO_VENDAO" length="256" name="prmQualificacaoVendao" type="java.lang.String"/>
+<property column="PRM_FORMA_PAGAMENTO" length="256" name="prmFormaPagamento" type="java.lang.String"/>
+<property column="PRM_DATA1" length="10" name="prmData1" type="java.lang.String"/>
+<property column="PRM_DATA2" length="10" name="prmData2" type="java.lang.String"/>
+<property column="PRM_MENSAGEM" length="256" name="prmMensagem" type="java.lang.String"/>
+</class>
+</hibernate-mapping>
