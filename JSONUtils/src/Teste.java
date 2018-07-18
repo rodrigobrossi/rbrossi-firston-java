@@ -1,12 +1,8 @@
-import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import br.ibm.com.json.api.JSONStringer;
-import br.ibm.com.json.api.JSONWriter;
 
 
 public class Teste {
@@ -28,15 +24,14 @@ public class Teste {
 		  m2.put("k23","v23");
 		  l1.add(m1);
 		  l1.add(m2);
-
-		  String jsonString = JSONStringer.toJSONString(l1);
+		 // String jsonString =(new JSONStringer()).toString(l1);
 		                
-		  System.out.println(jsonString);
+		  //System.out.println(jsonString);
          
-         StringWriter strOut = new StringWriter();
-			.write(strOut);
-         String s = StringWriter.(Notes); 
-         System.out.println(s);
+//         StringWriter strOut = new StringWriter();
+//			.write(strOut);
+//         String s = StringWriter.(Notes); 
+//         System.out.println(s);
 		
 	}
 

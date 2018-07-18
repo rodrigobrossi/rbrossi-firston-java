@@ -2,8 +2,6 @@ package br.com.crm.main;
 
 import javax.swing.UIManager;
 
-import sun.awt.AppContext;
-
 import br.com.crm.components.JSplash;
 import br.com.crm.components.MsgDialogUtil;
 import br.com.crm.core.ApplicationContext;
