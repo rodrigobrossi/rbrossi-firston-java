@@ -12,8 +12,7 @@ public class ServerStart  implements Runnable{
 	private Application application;
 	
 	ServerStart(Application application){
-		this.application= application;
-		
+		this.application= application;		
 	}
 
 	private boolean serverRunning;
