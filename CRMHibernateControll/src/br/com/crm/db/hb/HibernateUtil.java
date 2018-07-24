@@ -29,7 +29,7 @@ public class HibernateUtil {
 		System.out
 				.println("FirstOn: Wait for build Hibernate SessionFactory...");
 		try {
-			sessionFactory = new Configuration().configure("br/com/crm/db/hibernate.sqlserver.cfg.xml").buildSessionFactory();
+			sessionFactory = new Configuration().configure("br/com/crm/db/hibernate.hsqldb.cfg.xml").buildSessionFactory();
 			
 			//sessionFactory = new Configuration().configure().buildSessionFactory();
 		} catch (Throwable ex) {

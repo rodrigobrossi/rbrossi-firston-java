@@ -41,9 +41,16 @@ public class TesteHB {
 			tx = (JDBCTransaction) HibernateUtil.currentSession().beginTransaction();
 
 			//CrmEsporteCliente users = new CrmEsporteCliente();
-			CrmEmpresas users = new CrmEmpresas();
-
-			List l = users.getAll();
+			CrmEmpresas emp = new CrmEmpresas();
+			emp.setEmpNome("IBM");
+			emp.insert();
+			
+			
+			List l = emp.getAll();
+			
+			if(l==null){
+				System.out.println("Did not work");
+			}
 			
 			Iterator i = l.iterator();
 			while (i.hasNext()) {

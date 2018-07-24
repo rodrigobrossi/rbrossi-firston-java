@@ -42,15 +42,14 @@ public class Application extends JFrame {
 			try {
 				n.start(); // server stats here
 				this.wait();
-				System.out.println("[BROSSI]: Waiting for server initiate");
+				System.out.println("[FIRSTON-DB]: Waiting for server initiate");
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("[BROSSI]: Free Thread to use the software");
+		System.out.println("[FIRSTON-DB]: Free Thread to use the software");
 		label.setText("Running..");
 		label.setBackground(Color.GREEN);
-
 	}
 
 	/**
