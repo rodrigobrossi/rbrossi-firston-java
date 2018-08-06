@@ -7,3 +7,5 @@
 .metadata/*
 
 .gitignore
+/.metadata/
+/.recommenders/

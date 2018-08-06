@@ -2,8 +2,13 @@
 
 function FormataCampo(campo, evento, direcao){
 	if (campo.value.length < 1000000){
-			if(evento != 9 ){//tab
-				if(evento != 8 && evento != 46 && evento != 16 && !(evento > 36 && evento < 41)){ //delete, backspace, shift não causam evento
+			if(evento != 9 ){// tab
+				if(evento != 8 && evento != 46 && evento != 16 && !(evento > 36 && evento < 41)){ // delete,
+														    // backspace,
+														    // shift
+														    // nï¿½o
+														    // causam
+														    // evento
 					var tam = campo.value.length
 					if ((evento >= 48 && evento <= 57) || (evento >= 96 && evento <= 105)){
 						if (tam == 2 || tam == 5){
@@ -16,7 +21,7 @@ function FormataCampo(campo, evento, direcao){
 									campo.value = ""
 									}
 								else{
-									campo.value = "";//campo.value.substring(0,campo.value.length-1)
+									campo.value = "";// campo.value.substring(0,campo.value.length-1)
 									}
 								}
 							}
@@ -27,21 +32,21 @@ function FormataCampo(campo, evento, direcao){
 						if (direcao == "down"){
 							var teste = campo.value.substring(0,1);
 							if(campo.value<0){
-								alert(<%=("\""+trd.Traduz("Este campo não aceita valores negativos !")+"\"")%>);
+								alert("<%=("+trd.Traduz("Este campo nÃ£o aceita valores negativos !")+")%>");
 								campo.value="";
 								campo.focus();
 								return false;
 								}
 							else if(teste=="-"||teste=="+"||teste=="~"||teste=="^"||
 								   teste=="\""||teste=="'"||teste=="!"||teste=="@"||
-								   teste=="#"||teste=="$"||teste=="%"||teste=="¨"||
+								   teste=="#"||teste=="$"||teste=="%"||teste=="ï¿½"||
 								   teste=="&"||teste=="*"||teste=="("||teste==")"||
 								   teste=="_"||teste=="="||teste=="~"||teste=="`"||
-								   teste=="´"||teste=="{"||teste=="["||teste=="}"||
+								   teste=="ï¿½"||teste=="{"||teste=="["||teste=="}"||
 								   teste=="]"||teste=="<"||teste==","||teste=="."||
 								   teste==">"||teste==":"||teste==";"||teste=="/"||
 								   teste=="?"||teste=="|"||teste=="\\"||teste=="^"){
-								alert(<%=("\""+trd.Traduz("Este campo não aceita caracteres especiais !")+"\"")%>);
+								alert("<%="+trd.Traduz("Este campo noa aceita caracteres especiais !")+")%>");
 								campo.value="";
 								campo.focus();
 								return false;
@@ -49,4 +54,4 @@ function FormataCampo(campo, evento, direcao){
 						}
 					}
 				}
-		}//-->
+		}// -->
