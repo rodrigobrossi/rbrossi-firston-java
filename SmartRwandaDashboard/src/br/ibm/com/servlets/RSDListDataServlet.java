@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +26,6 @@ import org.hornetq.utils.json.JSONObject;
  *
  *         This Servlet will be used to build the JSON structure.
  */
-@WebServlet("/RSDListDataServlet")
 public class RSDListDataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
