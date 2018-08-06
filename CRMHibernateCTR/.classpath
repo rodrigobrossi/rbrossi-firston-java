@@ -46,8 +46,6 @@
 	<classpathentry kind="lib" path="lib/river-1.2.3.GA.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
-	<classpathentry kind="lib" path="lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="lib/sqltool.jar"/>
 	<classpathentry kind="lib" path="lib/mssql-jdbc-6.4.0.jre7.jar"/>
 	<classpathentry kind="output" path="bin"/>
