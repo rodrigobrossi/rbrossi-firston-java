@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://RBROSSI:1615;Instance=RBROSSI02;databaseName=OMEGAFIT;user=sde;password=sde;</property>
+		<property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+		<property name="hibernate.connection.pool_size">5</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.use_sql_comments">false</property>
+		
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="hibernate.cglib.use_reflection_optimizer">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.max_fetch_depth">	3</property>
+		<property name="use_outer_join">false</property>
+		<property name="show_sql">true</property>
+
+		<!-- Mapping files -->
+		<mapping resource="maps/CrmClubeCliente.hbm.xml" />
+		<mapping resource="maps/CrmContato.hbm.xml" />
+		<mapping resource="maps/CrmCrencaCliente.hbm.xml" />
+		<mapping resource="maps/CrmDatasComemorativas.hbm.xml" />
+		<mapping resource="maps/CrmEmpresas.hbm.xml" />
+		<mapping resource="maps/CrmEsporteCliente.hbm.xml" />
+		<mapping resource="maps/CrmEstiloCliente.hbm.xml" />
+		<mapping resource="maps/CrmFilhos.hbm.xml" />
+		<mapping resource="maps/CrmHistoricoContato.hbm.xml" />
+		<mapping resource="maps/CrmLazerCliente.hbm.xml" />
+		<mapping resource="maps/CrmNetos.hbm.xml" />
+		<mapping resource="maps/CrmPremiacoes.hbm.xml" />
+		<mapping resource="maps/CrmProduto.hbm.xml" />
+		<mapping resource="maps/CrmProfissaoCliente.hbm.xml" />
+		<mapping resource="maps/CrmProvidencias.hbm.xml" />
+		<mapping resource="maps/CrmRamoAtividade.hbm.xml" />
+		<mapping resource="maps/CrmRegistroVisita.hbm.xml" />
+		<mapping resource="maps/CrmRelacionamento.hbm.xml" />
+		<mapping resource="maps/CrmTipoRelacao.hbm.xml" />
+		<mapping resource="maps/CrmUsuarios.hbm.xml" />
+		<mapping resource="maps/CrmVendas.hbm.xml" />
+		<mapping resource="maps/CrmVendedores.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

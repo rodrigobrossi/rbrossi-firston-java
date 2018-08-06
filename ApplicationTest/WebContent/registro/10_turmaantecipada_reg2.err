@@ -1,0 +1,971 @@
+<%@page contentType="text/html" errorPage="/erro/ExceptionPage.jsp"%>
+<%@page import="java.sql.*,java.text.*,java.util.*"%>
+<%
+	//Limpa cache
+	response.setHeader("Pragma", "no-cache");
+	if (request.getProtocol().equals("HTTP/1.1")) {
+		response.setHeader("Cache-Control", "no-cache");
+	}
+	//recupera valores
+	request.getSession();
+	ser.comum.conexao.Conexao conexao = (ser.comum.conexao.Conexao) session
+			.getAttribute("Conexao");
+	ser.comum.Traducao.Traducao trd = (ser.comum.Traducao.Traducao) session
+			.getAttribute("Traducao");
+	ser.comum.param.param prm = (ser.comum.param.param) session
+			.getAttribute("Param");
+
+	String usu_codigo = "";
+	String usu_tipo = (String) session.getAttribute("usu_tipo");
+	String usu_nome = (String) session.getAttribute("usu_nome");
+	String usu_login = (String) session.getAttribute("usu_login");
+	Integer usu_fil = (Integer) session.getAttribute("usu_fil");
+	Integer usu_idi = (Integer) session.getAttribute("usu_idi");
+	Integer usu_cod = (Integer) session.getAttribute("usu_cod");
+	usu_codigo = usu_codigo.valueOf((Integer) session
+			.getAttribute("fun_codigo"));
+	String turma = (String) request.getParameter("turma");
+	String usu_plano = "";
+	usu_plano = usu_plano.valueOf(session.getAttribute("usu_plano"));
+
+	int pag = Integer.parseInt((String) session.getAttribute("pagina"));
+
+	int cont_func = 0;
+
+	boolean mostraCheck = false, bloquear = false;
+
+	Vector per = (Vector) session.getAttribute("vetorPermissoes");
+
+	ResultSet rs = null, rs_T = null, rsgrid = null, rsc = null;
+
+	//variAveis
+	String query = "", tipo_turma = "", pag_cur = "", complemento = "", avaliacao = "", query_grid = "", query_c = "", classe = "";
+	int contador = 0;
+	int ult = 0;
+	int tot = 0;
+	int irpag = 0;
+	int irpagtot = 0;
+	int pagatual = 0;
+	int pagtotal = 0;
+	boolean contem = false;
+	Calendar cal_env = Calendar.getInstance();
+	Calendar cal_ven = Calendar.getInstance();
+	java.util.Date dataAtual = new java.util.Date();
+	SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	String dia = formato.format(dataAtual);
+
+	//Verifica Bloqueio de Funcionalidades
+	query = "SELECT PLA_REGISTROTREINAMENTO FROM PLANO WHERE PLA_CODIGO = "
+			+ usu_plano;
+	rs = conexao.executaConsulta(query, session.getId());
+	if (rs.next()) {
+		if (rs.getString(1) != null) {
+			if (rs.getString(1).equals("N"))
+		bloquear = true;
+		}
+	}
+	if (rs != null) {
+		rs.close();
+		conexao.finalizaConexao(session.getId());
+	}
+	//verifica o tipo da turma
+	query = "SELECT TTR_CODIGO, CUR_CODIGO FROM TURMA WHERE TUR_CODIGO = "
+			+ turma;
+
+	rs = conexao.executaConsulta(query, session.getId() + "RS_1");
+	if (rs.next()) {
+		tipo_turma = rs.getString(1);
+		pag_cur = rs.getString(2);
+	}
+	if (rs != null) {
+		rs.close();
+		conexao.finalizaConexao(session.getId() + "RS_1");
+	}
+
+		String par = "";
+		if (usu_tipo.equals("F"))
+			par = "";
+		else {
+			if (usu_tipo.equals("P") || usu_tipo.equals("G")){
+			par = "";
+			}
+			else {
+		if (usu_tipo.equals("S")){
+			par = "";
+			}
+		}
+		query_grid = "SELECT FUNCIONARIO.FUN_CODIGO, FUNCIONARIO.FUN_CHAPA, FUNCIONARIO.FUN_NOME, "
+		+ "CARGO.CAR_NOME, DEPTO.DEP_NOME, TABELA3.TB3_DESCRICAO, TABELA2.TB2_NOME, "
+		+ "FILIAL.FIL_NOME, SOLICITANTE.FUN_NOME, FUNCIONARIO.FUN_DEMITIDO, FUNCIONARIO.FUN_TERCEIRO, TREINAMENTO.TEF_PLANEJADO, TREINAMENTO.TEF_CODIGO "
+		+ "FROM FUNCIONARIO, FUNCIONARIO SOLICITANTE, CARGO, DEPTO, TABELA3, TABELA2, FILIAL, TREINAMENTO "
+		+ "WHERE SOLICITANTE.FUN_CODIGO =* FUNCIONARIO.FUN_CODSOLIC AND "
+		+ "FUNCIONARIO.FUN_DEMITIDO = 'N' AND "
+		+ "CARGO.CAR_CODIGO = FUNCIONARIO.CAR_CODIGO AND "
+		+ "DEPTO.DEP_CODIGO = FUNCIONARIO.DEP_CODIGO AND "
+		+ "TABELA3.TB3_CODIGO =* FUNCIONARIO.TB3_CODIGO AND "
+		+ "TABELA2.TB2_CODIGO =* FUNCIONARIO.TB2_CODIGO AND "
+		+ "FILIAL.FIL_CODIGO =* FUNCIONARIO.FIL_CODIGO "
+		+ par
+		+ " AND "
+		+ "FUNCIONARIO.FUN_CODIGO = TREINAMENTO.FUN_CODIGO AND "
+		+ "TREINAMENTO.TUR_CODIGO_PLAN_ANT = "
+		+ turma
+		+ " "
+		+ "ORDER BY FUNCIONARIO.FUN_NOME";
+		query_c = "SELECT COUNT(*) "
+		+ "FROM FUNCIONARIO, FUNCIONARIO SOLICITANTE, CARGO, DEPTO, TABELA3, TABELA2, FILIAL, TREINAMENTO "
+		+ "WHERE SOLICITANTE.FUN_CODIGO =* FUNCIONARIO.FUN_CODSOLIC AND "
+		+ "FUNCIONARIO.FUN_DEMITIDO = 'N' AND "
+		+ "CARGO.CAR_CODIGO = FUNCIONARIO.CAR_CODIGO AND "
+		+ "DEPTO.DEP_CODIGO = FUNCIONARIO.DEP_CODIGO AND "
+		+ "TABELA3.TB3_CODIGO =* FUNCIONARIO.TB3_CODIGO AND "
+		+ "TABELA2.TB2_CODIGO =* FUNCIONARIO.TB2_CODIGO AND "
+		+ "FILIAL.FIL_CODIGO =* FUNCIONARIO.FIL_CODIGO "
+		+ par
+		+ " AND "
+		+ "FUNCIONARIO.FUN_CODIGO = TREINAMENTO.FUN_CODIGO AND "
+		+ "TREINAMENTO.TUR_CODIGO_PLAN_ANT = " + turma + " ";
+		//ConexAo com o Banco pelo Statement para a PaginaCAo com suas variaveis
+		String primeiro = "1";
+		rsgrid = conexao.paginacao(pag, query_grid, session.getId()
+		+ "PAG");
+		boolean existe = false;
+		if (rsgrid.next()) {
+			existe = true;
+		}
+		//VariAveis de controle de pAgina
+		if (request.getParameter("p") != null) {
+			primeiro = (String) request.getParameter("p");
+		}
+		int valor = Integer.parseInt(primeiro);
+		int valorAnt = Integer.parseInt(primeiro) - pag;
+		if (request.getParameter("i") != null) {
+			if (Integer.parseInt(request.getParameter("i")) > 0) {
+		irpag = Integer.parseInt(request.getParameter("i"));
+		irpagtot = ((irpag * pag) - pag) + 1;
+		primeiro = primeiro.valueOf(irpagtot);
+		valor = Integer.parseInt(primeiro);
+		valorAnt = Integer.parseInt(primeiro) - pag;
+			}
+		}
+		//Para nAo tentar mover para a linha zero
+		if (Integer.parseInt(primeiro) <= 0) {
+			primeiro = "1";
+		}
+		//Move o Cursor para a PosiCAo
+		if (primeiro.equals("1")) {
+			rsgrid.absolute(Integer.parseInt(primeiro));
+			rsgrid.previous();
+		} else {
+			rsgrid.absolute(Integer.parseInt(primeiro));
+			rsgrid.previous();
+		}
+
+		//Para contar as linhas da query
+		rsc = conexao
+		.executaConsulta(query_c, session.getId() + "RS_2");
+		//Calcula a Ultima pagina
+		if (rsc.next()) {
+			tot = rsc.getInt(1);
+			ult = ((tot / pag) * pag) + 1;
+			pagatual = (Integer.parseInt(primeiro) / pag) + 1;
+			Math e = null;
+			pagtotal = e.round((tot / pag) + 0.5f);
+		}
+		if (rsc != null) {
+			rsc.close();
+			conexao.finalizaConexao(session.getId() + "RS_2");
+		}
+		//Busca e Insere dados no vetor de funcionArios selecionados
+		String n = "";
+		Vector funcvet = new Vector();
+		if (request.getParameter("apagavet") != null) {
+			request.getSession();
+			funcvet = (Vector) session.getAttribute("funcs");
+			//insere os elementos no vetor
+			for (int k = 0; k <= pag; k++) {
+		if ((request.getParameter("checkbox" + n.valueOf(k)) != null)) {
+			if (!(funcvet.contains(request
+			.getParameter("checkbox" + n.valueOf(k)))))
+				funcvet.add(request.getParameter("checkbox"
+				+ n.valueOf(k)));
+		}
+			}
+		} else {
+			funcvet.clear();
+		}
+
+		session.setAttribute("funcs", funcvet);
+%>
+
+<%!public String CalendarToString(Calendar cal) {
+		String dia = "", mes = "", ano = "";
+		if (cal.get(Calendar.DAY_OF_MONTH) < 10)
+			dia = "0" + cal.get(Calendar.DAY_OF_MONTH);
+		else
+			dia = "" + cal.get(Calendar.DAY_OF_MONTH);
+		if ((cal.get(Calendar.MONTH) + 1) < 10)
+			mes = "0" + (cal.get(Calendar.MONTH) + 1);
+		else
+			mes = "" + cal.get(Calendar.MONTH);
+		ano = "" + cal.get(Calendar.YEAR);
+
+		return (dia + "/" + mes + "/" + ano);
+	}%>
+
+<html>
+<head>
+<title>FirstOn - <%=trd.Traduz("Registro")%> - <%=trd.Traduz("Criar LanCamento")%></title>
+<script language="JavaScript" src="/js/scripts.js"></script>
+<script language="JavaScript" src="js_registry_class.js"></script>
+<script language="JavaScript">
+        window.open("09_criarlancamento.jsp?turma=<%=turma%>","_self");
+</script>
+<link rel="stylesheet" href="../default.css" type="text/css">
+</head>
+
+<body onunload='return fecha();' leftmargin="0" topmargin="0"
+	marginwidth="0" marginheight="0"
+	onLoad="MM_preloadImages('../art/ico_home_on.gif','../art/ico_mensagens_on.gif','../art/ico_batepapo_on.gif','../art/ico_anotacoes_on.gif','../art/ico_listadecursos_on.gif','../art/ico_glossario_on.gif','../art/ico_ajuda_on.gif','art/onenglish.gif','art/onespanol.gif')">
+<form name="frm">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"
+	height="100%">
+	<tr>
+		<td valign="top">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="59" class="hcfundo">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+						<%
+								String ponto = (String) session.getAttribute("barra");
+								if (ponto.equals("..")) {
+						%> <jsp:include page="../menu/banner.jsp" flush="true"><jsp:param
+								value="opt" name="RG" /></jsp:include> <%
+						} else {
+						%> <jsp:include page="/menu/banner.jsp" flush="true"><jsp:param
+								value="opt" name="RG" /></jsp:include> <%
+ }
+ %>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="mnfundo">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="25" class="mnfundo">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<%
+								String oi = "", oia = "";
+								if (ponto.equals("..")) {
+									if (request.getParameter("op") == null) {
+								oi = "../menu/menu.jsp?op=" + "R";
+									} else {
+								oi = "../menu/menu.jsp?op="
+										+ request.getParameter("op");
+									}
+									if (request.getParameter("opt") == null) {
+								oia = "../menu/menu1.jsp?opt=" + "CTA";
+									} else {
+								oia = "../menu/menu1.jsp?opt="
+										+ request.getParameter("opt");
+									}
+								} else {
+									if (request.getParameter("op") == null) {
+								oi = "/menu/menu.jsp?op=" + "R";
+									} else {
+								oi = "/menu/menu.jsp?op=" + request.getParameter("op");
+									}
+									if (request.getParameter("opt") == null) {
+								oia = "/menu/menu1.jsp?opt=" + "CTA";
+									} else {
+								oia = "/menu/menu1.jsp?opt="
+										+ request.getParameter("opt");
+									}
+								}
+						%>
+						<jsp:include page="<%=oi%>" flush="true" />
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<jsp:include page="<%=oia%>" flush="true" />
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="20">&nbsp;</td>
+				<td width="100%" align="center">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="13">&nbsp;</td>
+						<td class="trontrk" align="center"><%=trd.Traduz("Criar LanCamento Turma Antecipada")%></td>
+						<td width="29">&nbsp;</td>
+					</tr>
+				</table>
+				</td>
+				<td width="20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="20" height="1">&nbsp;</td>
+				<td valign="top" class="ctvdiv">&nbsp;</td>
+				<td width="20">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="20" valign="top"></td>
+
+				<td valign="top">&nbsp;<br>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="12">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="100%">
+						<center>
+						<%
+									if (bloquear == false) {
+									if (per
+									.contains("REGISTRO - PARTICIPANTES TURMA ANT - MANUTENCAO")) {
+								mostraCheck = true;
+						%>
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+								<table border="1" cellspacing="0" cellpadding="1"
+									bordercolor="#000000">
+									<tr>
+										<td onMouseOver="this.className='ctonlnk2';"
+											OnClick="incpartpla()" width="190" height="22" align=center
+											class="botver"><a href="#"
+											onClick="return incpartpla();" class="txbotver"><%=trd.Traduz("INCLUIR PLANEJADOS")%></a></td>
+									</tr>
+								</table>
+								</td>
+								<td width="10">&nbsp;</td>
+								<td>
+								<table border="1" cellspacing="0" cellpadding="1"
+									bordercolor="#000000">
+									<tr>
+										<td onMouseOver="this.className='ctonlnk2';"
+											onClick="incpart();" width="190" height="22" align=center
+											class="botver"><a href="#" onClick="return incpart();"
+											class="txbotver"><%=trd.Traduz("INCLUIR NAO PLANEJADOS")%></a></td>
+									</tr>
+								</table>
+								</td>
+								<%
+								if (existe) {
+								%>
+								<td width="10">&nbsp;</td>
+								<td>
+								<table border="1" cellspacing="0" cellpadding="1"
+									bordercolor="#000000">
+									<tr>
+										<td onMouseOver="this.className='ctonlnk2';"
+											OnClick="excpart()" width="190" height="22" align=center
+											class="botver"><a href="#" onClick="return excpart();"
+											class="txbotver"><%=trd.Traduz("EXCLUIR")%></a></td>
+									</tr>
+								</table>
+								</td>
+								<td width="10">&nbsp;</td>
+								<td>
+								<table border="1" cellspacing="0" cellpadding="1"
+									bordercolor="#000000">
+									<tr>
+										<td onMouseOver="this.className='ctonlnk2';"
+											onClick="return enviar()" width="190" height="22"
+											align=center class="botver"><a href="#"
+											onClick="return enviar();" class="txbotver"><%=trd.Traduz("REGISTRAR")%></a></td>
+									</tr>
+								</table>
+								</td>
+								<%
+								}
+								%>
+							</tr>
+						</table>
+						<%
+								}
+								}//if(bloquear == false)
+						%>
+						</center>
+
+						<table border="0" cellspacing="1" cellpadding="0" width="100%">
+							<%
+							if (bloquear == false) {
+							%>
+							<tr align="center">
+								<td class="ctfontc" colspan="9">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="1" class="ctvdiv" colspan="9"><img
+									src="../art/bit.gif" width="1" height="1"></td>
+							</tr>
+							<tr>
+								<td height="12" colspan="9"><img src="../art/bit.gif"
+									width="1" height="1"></td>
+							</tr>
+							<%
+							}
+							%>
+							<tr align="center">
+								<td class="ctfontc" valign="middle" colspan="100%">* - <%=trd.Traduz("TERCEIRO")%>
+								&nbsp;&nbsp;&nbsp;&nbsp;<img src="../art/black.gif" width="17"
+									height="17"> = <%=trd.Traduz("PLANEJADOS")%>
+								&nbsp;&nbsp;&nbsp;&nbsp;<img src="../art/red.gif" width="17"
+									height="17"> = <%=trd.Traduz("NAO PLANEJADOS")%></td>
+							</tr>
+							<tr>
+								<td height="12" colspan="9"><img src="../art/bit.gif"
+									width="1" height="1"></td>
+							</tr>
+							<tr>
+								<td height="1" class="ctvdiv" colspan="9"><img
+									src="../art/bit.gif" width="1" height="1"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<%
+									ResultSet rsTurma = null;
+									String queryTurma = "SELECT C.CUR_NOME, T.TUR_DATAINICIO, T.TUR_DATAFINAL, T.TUR_VAGAS "
+									+ "FROM TURMA T, CURSO C "
+									+ "WHERE T.CUR_CODIGO = C.CUR_CODIGO AND T.TUR_CODIGO = "
+									+ turma;
+									rsTurma = conexao.executaConsulta(queryTurma, session.getId()
+									+ "RS_3");
+									if (rsTurma.next()) {
+										String dataf = "", datai = "";
+										java.util.Date data1 = rsTurma.getDate(2);
+										java.util.Date data2 = rsTurma.getDate(3);
+										datai = formato.format(data1);
+										dataf = formato.format(data2);
+							%>
+							<tr>
+								<td colspan="100%" align="left" class="ftverdanacinza"><font
+									size="1"><a href="06_criarturmaantecipada.jsp"
+									class="lnk"> <%=trd.Traduz("Curso")%>: <%=rsTurma.getString(1)%>
+								&nbsp; <%=trd.Traduz("Data inicial")%>:&nbsp;<%=datai%>
+								&nbsp;-&nbsp; <%=trd.Traduz("Data final")%>:&nbsp;<%=dataf%>
+								&nbsp;-&nbsp; <%=trd.Traduz("Vagas")%>:&nbsp;<%=rsTurma.getString(4)%>
+								</a></font></td>
+							</tr>
+							<%
+									}
+									if (rsTurma != null) {
+										rs.close();
+										conexao.finalizaConexao(session.getId() + "RS_3");
+									}
+							%>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<%
+											if (existe) {
+											if (bloquear == false) {
+								%>
+								<td width="4%" height="28">&nbsp;</td>
+								<%
+								}
+								%>
+								<td width="4%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("CHAPA")%></div>
+								</td>
+								<td width="20%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("NOME")%></div>
+								</td>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("CARGO")%></div>
+								</td>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("FILIAL")%></div>
+								</td>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("DEPARTAMENTO")%></div>
+								</td>
+								<%
+								if (prm.buscaparam("USE_TB2").equals("S")) {
+								%>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("TABELA2")%></div>
+								</td>
+								<%
+								}
+								%>
+								<%
+								if (prm.buscaparam("USE_TB3").equals("S")) {
+								%>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("TABELA3")%></div>
+								</td>
+								<%
+								}
+								%>
+								<td width="12%" class="celtittab" height="28">
+								<div align="center"><%=trd.Traduz("SOLICITANTE")%></div>
+								</td>
+								<%
+								} else {
+								%>
+								<td colspan="100%" class="celtittab" align="center"><%=trd.Traduz("NENHUM REGISTRO ENCONTRADO")%>...</td>
+								<%
+								}
+								%>
+							</tr>
+							<%
+									//Faz o loop no nº de vezes da paginaCAo
+
+									//if(existe){
+									for (int i = 1; i <= pag; i++) {
+										if (rsgrid.next()) {
+									valor = valor + 1;
+									if (rsgrid.getString(12) != null)
+										if (rsgrid.getString(12).equals("S"))
+											classe = "celnortab";//planejados
+										else
+											classe = "celnortabvv";//nao planejados
+									else
+										classe = "celnortab";//planejados
+							%>
+							<tr class="<%=classe%>">
+								<%
+								if (bloquear == false) {
+								%>
+								<td width="4%">
+								<%
+												if (mostraCheck) {
+												if (!funcvet.contains(rsgrid.getString(1))) {
+								%> <input type="checkbox" name="checkbox<%=i%>"
+									value="<%=rsgrid.getInt(13)%>"> <%
+ } else {
+ %> <input type="checkbox" name="checkbox<%=i%>"
+									value="<%=rsgrid.getInt(13)%>" checked> <%
+ 				funcvet.remove(rsgrid.getString(1));
+ 				}
+ 			} else {
+ %>&nbsp;<%
+ }
+ %>
+								</td>
+								<%
+								}//if(bloquear == false)
+								%>
+
+								<td width="4%">
+								<div align="center"><%=rsgrid.getString(2)%></div>
+								</td>
+								<%
+								if (rsgrid.getString(11).equals("S")) {
+								%>
+								<td width="20%">*<%=((rsgrid.getString(3) == null) ? ""
+											: rsgrid.getString(3))%></td>
+								<%
+								} else {
+								%>
+								<td width="20%"><%=((rsgrid.getString(3) == null) ? ""
+											: rsgrid.getString(3))%></td>
+								<%
+								}
+								%>
+								<td width="12%"><%=((rsgrid.getString(4) == null) ? "" : rsgrid
+										.getString(4))%></td>
+								<td width="12%"><%=((rsgrid.getString(8) == null) ? "" : rsgrid
+										.getString(8))%></td>
+								<td width="12%"><%=((rsgrid.getString(5) == null) ? "" : rsgrid
+										.getString(5))%></td>
+								<%
+								if (prm.buscaparam("USE_TB2").equals("S")) {
+								%>
+								<td width="12%"><%=((rsgrid.getString(7) == null) ? ""
+											: rsgrid.getString(7))%></td>
+								<%
+								}
+								%>
+								<%
+								if (prm.buscaparam("USE_TB3").equals("S")) {
+								%>
+								<td width="12%"><%=((rsgrid.getString(6) == null) ? ""
+											: rsgrid.getString(6))%></td>
+								<%
+								}
+								%>
+								<td width="12%"><%=((rsgrid.getString(9) == null) ? "" : rsgrid
+										.getString(9))%></td>
+							</tr>
+							<%
+									}
+									}
+									// }
+							%>
+						</table>
+
+						</td>
+					</tr>
+					<tr>
+						<td height="30" colspan="3">
+						<table width="100%" border="0" cellspacing="0" cellpadding="5">
+							<tr>
+								<td align="left" class="ctfontc" width="16%"><%=trd.Traduz("PAGINA")%>
+								<b><%=pagatual%></b> <%=trd.Traduz("DE")%> <b><%=pagtotal%></b></td>
+								<td align="right" class="ctfontc" width="16%"><%=trd.Traduz("Total de")%>
+								<b><%=tot%></b> <%=trd.Traduz("PESSOAS")%></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="cthdivb" colspan="3" height="1"><img
+							src="../art/bit.gif" width="1" height="1"></td>
+					</tr>
+					<tr>
+						<td height="30" colspan="3" class="ctfundo">
+						<table width="100%" border="0" cellspacing="0" cellpadding="9">
+							<tr>
+								<input type="hidden" name="p">
+								<input type="hidden" name="i">
+								<input type="hidden" name="extra">
+								<input type="hidden" name="turma" value="<%=turma%>">
+
+								<td class="ctfontc" width="17%"><a href="#"
+									onClick="return PrimeiraPag();" class="ctoflnkb"><%=trd.Traduz("Primeira PAgina")%></a>
+								</td>
+								<%
+								if (!primeiro.equals("1")) {
+								%>
+								<td class="ctfontc" width="17%"><a href="#"
+									value="<%=valorAnt%>" onClick="return AnteriorPag(this);"
+									class="ctoflnkb"><%=trd.Traduz("PAgina Anterior")%></a></td>
+								<td class="ctfontc" width="17%"><a><%=trd.Traduz("PAGINA")%>
+								<input type="text" name="textir2" size="3"> <input
+									type="button" name="ir2" class="botcin"
+									value="  <%=trd.Traduz("IR")%>  " onClick="return irpag2();">
+								</a></td>
+								<%
+								} else {
+								%>
+								<td class="ctfontc" width="17%"><a><%=trd.Traduz("PAgina Anterior")%></a></td>
+								<td class="ctfontc" width="17%"><a><%=trd.Traduz("PAGINA")%>
+								<input type="text" name="textir" size="3"> <input
+									type="button" name="ir" class="botcin"
+									value="  <%=trd.Traduz("IR")%>  " onClick="return irpag();">
+								</a></td>
+								<%
+										}
+										if (valor <= tot) {
+								%>
+								<td align="right" class="ctfontc" width="17%"><a href="#"
+									value="<%=valor%>" onClick="return ProximaPag(this);"
+									class="ctoflnkb"><%=trd.Traduz("PrOxima PAgina")%></a></td>
+								<%
+								} else {
+								%>
+								<td align="right" class="ctfontc" width="17%"><a><%=trd.Traduz("PrOxima PAgina")%></a></td>
+								<%
+								}
+								%>
+								<td align="right" class="ctfontc" width="16%"><a href="#"
+									name="valor" value="<%=ult%>"
+									onClick="return ProximaPag(this);" class="ctoflnkb"><%=trd.Traduz("Ultima PAgina")%></a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<%
+							//consulta se existem avaliacoes para o curso, senao nao houver pega as avaliacoes padrao do plano
+							if (!pag_cur.equals("")) {
+								query = "SELECT DISTINCT A.AVA_DESCRICAO, Q.QUE_NOME, Q.QUE_CODIGO, PA.PLV_DIASENVIO, PA.PLV_DIASVENC, PA.CUR_CODIGO, PA.PLA_CODIGO "
+								+ "FROM PLANO_AVALIA PA, AVALIACAO A, QUESTIONARIO Q, CURSO C "
+								+ "WHERE PA.QUE_CODIGO = Q.QUE_CODIGO "
+								+ "AND Q.AVA_CODIGO = A.AVA_CODIGO "
+								+ "AND PA.CUR_CODIGO = C.CUR_CODIGO "
+								+ "AND C.CUR_CODIGO = "
+								+ pag_cur
+								+ " "
+								+ "ORDER BY A.AVA_DESCRICAO ";
+
+								rs = conexao.executaConsulta(query, session.getId()
+								+ "RS_4");
+								if (rs.next()) {
+							contem = true;
+								}
+								if (rs != null) {
+							rs.close();
+							conexao.finalizaConexao(session.getId() + "RS_4");
+								}
+								if (!contem) {
+							query = "SELECT DISTINCT A.AVA_DESCRICAO, Q.QUE_NOME, Q.QUE_CODIGO, PA.PLV_DIASENVIO, PA.PLV_DIASVENC, PA.CUR_CODIGO, PA.PLA_CODIGO "
+									+ "FROM PLANO_AVALIA PA, AVALIACAO A, QUESTIONARIO Q "
+									+ "WHERE PA.QUE_CODIGO = Q.QUE_CODIGO "
+									+ "AND Q.AVA_CODIGO = A.AVA_CODIGO "
+									+ "AND PA.CUR_CODIGO IS NULL "
+									+ "AND PA.PLA_CODIGO = "
+									+ usu_plano
+									+ " "
+									+ "ORDER BY A.AVA_DESCRICAO ";
+
+							rs = conexao.executaConsulta(query, session.getId()
+									+ "RS_5");
+							if (rs.next())
+								contem = true;
+							if (rs != null) {
+								rs.close();
+								conexao.finalizaConexao(session.getId() + "RS_5");
+							}
+							complemento = "DO PLANO";
+								} else {
+							complemento = "DO CURSO";
+								}
+								contador = 0;
+								if (contem) {
+					%>
+					<tr>
+						<td class="ftverdanacinza" align="center" colspan="90%">&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td class="ftverdanacinza" align="center" colspan="90%">&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td class="ftverdanacinza" align="center" colspan="90%">
+						<hr>
+						</td>
+					</tr>
+				</table>
+
+				<%
+				if (bloquear == false) {
+				%>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr align="center">
+						<td class="trontrk" align="center" colspan="100%"><%=trd.Traduz("AVALIACOES " + complemento)%></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td class="ftverdanacinza" align="left"><%=trd.Traduz("QUESTIONARIO")%></td>
+						<td class="ftverdanacinza" align="left"><%=trd.Traduz("DATA ENVIO")%></td>
+						<td class="ftverdanacinza" align="left"><%=trd.Traduz("DATA VENCIMENTO")%></td>
+						<td>
+					</tr>
+					<%
+								rs = conexao.executaConsulta(query, session.getId()
+								+ "RS_6");
+								if (rs.next()) {
+									do {
+								if (!avaliacao.equals(rs.getString(1))
+										&& contador != 0) {
+					%>
+					<tr>
+						<td align="left" width="20%">
+						<%
+										if (request
+										.getParameter("txt_dt_envio_"
+												+ contador) == null) {
+						%> <input type="text" name="txt_dt_envio_<%=contador%>" size="9"
+							value="<%=CalendarToString(cal_env)%>" onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ } else {
+ %> <input type="text" name="txt_dt_envio_<%=contador%>" size="9"
+							value=<%=("\""+request.getParameter("txt_dt_envio_"+contador)%>
+							"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ }
+ %> &nbsp;<img onclick="DoCal(txt_dt_envio_<%=contador%>)"
+							style="cursor: hand" src="../art/icon_cal.gif" title="CalendArio"
+							WIDTH="17" HEIGHT="16"></td>
+						<td align="left" width="20%">
+						<%
+										if (request
+										.getParameter("txt_dt_vencimento_"
+												+ contador) == null) {
+						%> <input type="text" name="txt_dt_vencimento_<%=contador%>"
+							size="9" value="<%=CalendarToString(cal_ven)%>"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ } else {
+ %> <input type="text" name="txt_dt_vencimento_<%=contador%>" size="9"
+							value=<%=("\""+request.getParameter("txt_dt_vencimento_"+contador)%>
+							"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ }
+ %> &nbsp;<img onclick="DoCal(txt_dt_vencimento_<%=contador%>)"
+							style="cursor: hand" src="../art/icon_cal.gif" title="CalendArio"
+							WIDTH="17" HEIGHT="16"></td>
+					</tr>
+					<%
+								}
+								if (!avaliacao.equals(rs.getString(1))) {
+									contador++;
+					%>
+					<tr>
+						<td align="left" width="25%" class="ftverdanacinza">
+						<%
+										if (request.getParameter("chk_"
+										+ contador) == null) {
+						%> <input type="checkbox" name="chk_<%=contador%>">&nbsp;<%=rs.getString(1)%>
+						<%
+						} else {
+						%> <input type="checkbox" name="chk_<%=contador%>" checked>&nbsp;<%=rs.getString(1)%>
+						<%
+						}
+						%>
+						</td>
+						<td align="left" width="35%"><select
+							name="cbo_questionario_<%=contador%>">
+							<option value="" selected><%=trd.Traduz("Selecione")%></option>
+							<%
+											if (rs
+											.getString(3)
+											.equals(
+													request
+													.getParameter("cbo_questionario_"
+													+ contador))) {
+							%>
+							<option value="<%=rs.getString(3)%>" selected><%=rs.getString(2)%></option>
+							<%
+							} else {
+							%>
+							<option value="<%=rs.getString(3)%>"><%=rs.getString(2)%></option>
+							<%
+										}
+										} else {
+											if (rs
+											.getString(3)
+											.equals(
+													request
+													.getParameter("cbo_questionario_"
+													+ contador))) {
+							%>
+							<option value="<%=rs.getString(3)%>" selected><%=rs.getString(2)%></option>
+							<%
+							} else {
+							%>
+							<option value="<%=rs.getString(3)%>"><%=rs.getString(2)%></option>
+							<%
+										}
+										}
+										avaliacao = rs.getString(1);
+										cal_env.setTime(dataAtual);
+										cal_env.add(Calendar.DATE, rs.getInt(4));
+										cal_ven.setTime(dataAtual);
+										cal_ven.add(Calendar.DATE, rs.getInt(5));
+											} while (rs.next());
+										}
+										if (rs != null) {
+											rs.close();
+											conexao.finalizaConexao(session.getId()
+											+ "RS_6");
+										}
+										if (contador != 0) {
+							%>
+						</select></td>
+						<td align="left" width="20%">
+						<%
+										if (request.getParameter("txt_dt_envio_"
+										+ contador) == null) {
+						%> <input type="text" name="txt_dt_envio_<%=contador%>" size="9"
+							value="<%=CalendarToString(cal_env)%>" onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ } else {
+ %> <input type="text" name="txt_dt_envio_<%=contador%>" size="9"
+							value=<%=("\""+request.getParameter("txt_dt_envio_"+contador)%>
+							"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ }
+ %> &nbsp;<img onclick="DoCal(txt_dt_envio_<%=contador%>)"
+							style="cursor: hand" src="../art/icon_cal.gif" title="CalendArio"
+							WIDTH="17" HEIGHT="16"></td>
+						<td align="left" width="20%">
+						<%
+										if (request.getParameter("txt_dt_vencimento_"
+										+ contador) == null) {
+						%> <input type="text" name="txt_dt_vencimento_<%=contador%>"
+							size="9" value="<%=CalendarToString(cal_ven)%>"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ } else {
+ %> <input type="text" name="txt_dt_vencimento_<%=contador%>" size="9"
+							value=<%=("\""+request.getParameter("txt_dt_vencimento_"+contador)%>
+							"
+							onChange="ChecaData(this)"
+							onKeyDown="FormataData(this, window.event.keyCode,'down')"
+							onKeyUp="FormataData(this, window.event.keyCode,'up')"> <%
+ }
+ %> &nbsp;<img onclick="DoCal(txt_dt_vencimento_<%=contador%>)"
+							style="cursor: hand" src="../art/icon_cal.gif" title="CalendArio"
+							WIDTH="17" HEIGHT="16"></td>
+					</tr>
+					<%
+					}
+					%>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="ftverdanacinza" align="center" colspan="100%">&nbsp;
+				</td>
+			</tr>
+			<%
+			}
+			%>
+		</table>
+		<%
+				}
+				}
+		%>
+		
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><input type="hidden" name="turma" value="<%=turma%>">
+		<input type="hidden" name="cont_avaliacao" value="<%=contador%>">
+		<input type="hidden" name="cont_func" value="<%=tot%>"> <input
+			type="hidden" name="origem" value="TA"></td>
+	</tr>
+	<tr>
+		<td align="right" height="30" class="difundo">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="difundo">
+				<%
+				if (ponto.equals("..")) {
+				%> <jsp:include page="../rodape/rodape.jsp" flush="true" /> <%
+ } else {
+ %> <jsp:include page="/rodape/rodape.jsp" flush="true" /> <%
+ }
+ %>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</form>
+
+
+
+</body>
+</html>
