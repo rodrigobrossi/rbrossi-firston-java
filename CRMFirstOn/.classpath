@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CRMHibernateControll">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="CRMHibernateControll/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CRMFrameworks"/>
 	<classpathentry kind="lib" path="lib/aclibico-2.1.jar"/>
 	<classpathentry kind="lib" path="lib/activation.jar"/>
@@ -22,5 +17,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/FirstOnControl"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

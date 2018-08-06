@@ -1,16 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html" errorPage="/erro/ExceptionPage.jsp"%>
+
+<%
+    response.setHeader("Pragma", "no-cache");
+    if (request.getProtocol().equals("HTTP/1.1"))
+    {
+      response.setHeader("Cache-Control", "no-cache");
+    }
+    
+ 
+%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>FirstOn</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="refresh" content="0;URL=login.jsp">
 </head>
-<body>
-	<p>Hello World from Brossi Applications</p>
-	
-	<p>Check your Servlet here </p> <a href="HelloWorld">servlet</a> 
-		
-</body>
 
-</html>
+<body  onunload='return fecha();'  bgcolor="#FFFFFF" text="#000000">  
+
+</body>
+</html> 
