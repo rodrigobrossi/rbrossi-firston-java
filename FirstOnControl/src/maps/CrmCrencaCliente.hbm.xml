@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="br.com.crm.db.CrmCrencaCliente" schema="dbo" table="CRM_CRENCA_CLIENTE">
+<id column="CRC_ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="CRC_TITULO" length="256" name="crcTitulo" not-null="true" type="java.lang.String"/>
+<property column="CRC_OBSERVACAO" length="256" name="crcObservacao" type="java.lang.String"/>
+<property column="CRC_DICA_RELACIONAMENTO" length="256" name="crcDicaRelacionamento" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

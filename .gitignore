@@ -1,14 +1,25 @@
 # Compiled class file
 *.class
+<<<<<<< HEAD
 *.snap
 
 # Log file
 *.log
 *.war
+=======
+
+# Log file
+*.log
+>>>>>>> 0d0bbb8b709dc3ed984961bbb77f31510f2892bd
 
 .metadata/*
 
 .gitignore
+<<<<<<< HEAD
 .metadata/
 .metadata/**/
 .recommenders/
+=======
+/.metadata/
+/.recommenders/
+>>>>>>> 0d0bbb8b709dc3ed984961bbb77f31510f2892bd
