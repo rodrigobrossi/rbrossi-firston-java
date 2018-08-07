@@ -9,6 +9,6 @@
 .metadata/*
 
 .gitignore
-/.metadata/
-/.metadata/**/*
-/.recommenders/
+.metadata/
+.metadata/**/
+.recommenders/
