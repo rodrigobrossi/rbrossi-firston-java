@@ -11,10 +11,10 @@ public class ConnectionUtils {
 	public static Connection getConnection(){
 			
 			Connection conn = null;
-			String url = "jdbc:jtds:sqlserver://localhost:1615/OMEGAFIT";
+			String url = "jdbc:sqlserver://localhost:1433;databaseName=omegafit";
 			Properties props = new Properties();
-			props.setProperty("user", "sde");
-			props.setProperty("password", "sde");
+			props.setProperty("user", "sa");
+			props.setProperty("password", "Kazu@ibm2020");
 
 			try {
 				Class.forName("net.sourceforge.jtds.jdbc.Driver");
