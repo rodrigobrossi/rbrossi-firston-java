@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/CRMFrameworks"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/tomcat7-websocket.jar"/>
+	<classpathentry kind="lib" path="/Users/rbrossi/apache-tomcat-7.0.85/lib/websocket-api.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CRMHibernateCTR"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CRMFrameworks"/>
 	<classpathentry kind="lib" path="lib/aclibico-2.1.jar"/>
 	<classpathentry kind="lib" path="lib/activation.jar"/>
 	<classpathentry kind="lib" path="lib/com-imagine-component-calendar.jar"/>
 	<classpathentry kind="lib" path="lib/commons-beanutils.jar"/>
 	<classpathentry kind="lib" path="lib/cos.jar"/>
 	<classpathentry kind="lib" path="lib/flexdock-0.4.0.jar"/>
-	<classpathentry kind="lib" path="lib/mail.jar"/>
-<<<<<<< HEAD
+	<classpathentry kind="lib" path="lib/gmaps-232-m2_L1.jar"/>
+	<classpathentry kind="lib" path="lib/gmaps-232-m2_ts_L1.jar"/>
 	<classpathentry kind="lib" path="lib/gmaps-232-n60-2_L1.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-core-3.6.1.Final.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CRMHibernateCTR"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-=======
-	<classpathentry kind="lib" path="/CRMHibernateControll/lib/log4j-1.2.7.jar"/>
-	<classpathentry kind="lib" path="lib/gmaps-232-n60-2_L1.jar"/>
-	<classpathentry kind="lib" path="/CRMHibernateControll/lib/hibernate-core-3.6.1.Final.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
-		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/FirstOnControl"/>
->>>>>>> 0d0bbb8b709dc3ed984961bbb77f31510f2892bd
-	<classpathentry kind="output" path="build"/>
+	<classpathentry kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
