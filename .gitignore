@@ -1,5 +1,6 @@
 # Compiled class file
 *.class
+*.snap
 
 # Log file
 *.log
@@ -9,4 +10,5 @@
 
 .gitignore
 /.metadata/
+/.metadata/**/*
 /.recommenders/
