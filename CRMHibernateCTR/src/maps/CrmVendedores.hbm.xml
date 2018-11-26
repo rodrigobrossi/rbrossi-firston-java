@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="br.com.crm.db.CrmVendedores" schema="dbo" table="CRM_VENDEDORES">
+<id column="VNR_ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="VNR_VENDEDOR" length="256" name="vnrVendedor" not-null="true" type="java.lang.String"/>
+<property column="VNR_DATA_ADMISSAO" length="10" name="vnrDataAdmissao" type="java.lang.String"/>
+<property column="VNR_OBSERVACAO" length="500" name="vnrObservacao" type="java.lang.String"/>
+<property column="VNR_SENHA_VENDA" length="8" name="vnrSenhaVenda" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,9 +1,16 @@
 # Compiled class file
 *.class
+*.snap
 
 # Log file
 *.log
+*.war
+
 
 .metadata/*
 
 .gitignore
+
+.metadata/
+.metadata/**/
+.recommenders/
