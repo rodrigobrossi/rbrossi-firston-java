@@ -16,8 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-import com.sun.org.apache.xerces.internal.impl.dv.ValidationContext;
-
 import br.com.crm.components.calendar.JDateChooser;
 import br.com.crm.control.AbstractDataBaseCTR;
 import br.com.crm.control.EmpresasCTR;
@@ -88,7 +86,7 @@ public class CadastroEmpresaView extends AncestorFrame {
 
 		cadastro = new JPanel(new GridBagLayout());
 		cadastro.setBorder(new TitledBorder(new LineBorder(Color.BLACK, 1),
-				"Endereço da empresa"));
+				"Endereï¿½o da empresa"));
 
 		// Initialize components
 		emp_ddd = new JTextField(3);
@@ -122,15 +120,15 @@ public class CadastroEmpresaView extends AncestorFrame {
 
 		/* FIXME change it to a combo box */
 		emp_condicao_pagamento = new JTextField(30);
-		addComponent2(0, 2, "Condição do pagamento:", emp_condicao_pagamento);
+		addComponent2(0, 2, "Condiï¿½ï¿½o do pagamento:", emp_condicao_pagamento);
 
 		emp_num_benefciarios = new JTextField(3);
 		//emp_num_benefciarios.setName(ValidatorConstants.VALIDFOR_NUMERIC_1);
-		addComponent2(2, 2, "Número de beneficiarios:", new ValidatorDecorator(
+		addComponent2(2, 2, "Nï¿½mero de beneficiarios:", new ValidatorDecorator(
 				emp_num_benefciarios,true,ValidatorConstants.VALIDFOR_TIT));
 
 		emp_observacao = new JTextArea(5, 30);
-		addComponent2(0, 4, "Observaçao:", new JScrollPane(emp_observacao));
+		addComponent2(0, 4, "Observaï¿½ao:", new JScrollPane(emp_observacao));
 
 		/* FIXME should be a combo from populate with DB data */
 		emp_produto = new JTextArea(5, 30);
@@ -141,7 +139,7 @@ public class CadastroEmpresaView extends AncestorFrame {
 
 		emp_preco = new JTextField(10);
 	//	emp_preco.setName(ValidatorConstants.VALIDFOR_PRICE);
-		addComponent2(2, 6, "Preço:", new ValidatorDecorator(emp_preco,true,ValidatorConstants.VALIDFOR_TIT));
+		addComponent2(2, 6, "Preï¿½o:", new ValidatorDecorator(emp_preco,true,ValidatorConstants.VALIDFOR_TIT));
 
 		emp_subsidia_para_funcionario = new JComboBox(new String[] { "SIM",
 				"NAO" });
@@ -163,12 +161,12 @@ public class CadastroEmpresaView extends AncestorFrame {
 
 		/* TODO Ask Garcia how to do that */
 		emp_qualificacao_margem = new JTextArea(5, 30);
-		addComponent2(0, 12, "Qualificação e margem:", new JScrollPane(
+		addComponent2(0, 12, "Qualificaï¿½ï¿½o e margem:", new JScrollPane(
 				emp_qualificacao_margem));
 
 		/* TODO Ask Garcia how to do that */
 		emp_beneficicios_agregados = new JTextArea(5, 30);
-		addComponent2(2, 12, "Benefícios agregados:", new JScrollPane(
+		addComponent2(2, 12, "Benefï¿½cios agregados:", new JScrollPane(
 				emp_beneficicios_agregados));
 		
 		/* TODO Ask Garcia how to do that */

@@ -9,14 +9,60 @@
 	<classpathentry kind="lib" path="lib/cos.jar"/>
 	<classpathentry kind="lib" path="lib/flexdock-0.4.0.jar"/>
 	<classpathentry kind="lib" path="lib/mail.jar"/>
-	<classpathentry kind="lib" path="/CRMHibernateControll/lib/log4j-1.2.7.jar"/>
 	<classpathentry kind="lib" path="lib/gmaps-232-n60-2_L1.jar"/>
-	<classpathentry kind="lib" path="/CRMHibernateControll/lib/hibernate-core-3.6.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-2.0-rc2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.0-dev-3.20030607.194155.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1-dev.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/ehcache-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-core-3.6.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-search-analyzers-3.4.0.Alpha1.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate-tools.bkp"/>
+	<classpathentry kind="lib" path="lib/hibernate2.bkp"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/i18nlog-1.0.10.jar"/>
+	<classpathentry kind="lib" path="lib/infinispan-core-4.2.1.CR3.jar"/>
+	<classpathentry kind="lib" path="lib/infinispan-lucene-directory-4.2.1.CR3.jar"/>
+	<classpathentry kind="lib" path="lib/javassist.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-transaction-api-1.0.1.GA.jar"/>
+	<classpathentry kind="lib" path="lib/jgroups-2.12.0.CR4.jar"/>
+	<classpathentry kind="lib" path="lib/jgroups-2.8.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/jms-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jsr250-api-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jta.jar"/>
+	<classpathentry kind="lib" path="lib/jtds-1.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.7.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-analyzers-3.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-collation-3.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-core-3.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/lucene-snowball-3.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/marshalling-api-1.2.3.GA.jar"/>
+	<classpathentry kind="lib" path="lib/Opta.jar"/>
+	<classpathentry kind="lib" path="lib/oscache-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-8.4-701.jdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/rhq-pluginAnnotations-3.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/river-1.2.3.GA.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/sqltool.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/FirstOnControl"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CRMHibernateControll"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>

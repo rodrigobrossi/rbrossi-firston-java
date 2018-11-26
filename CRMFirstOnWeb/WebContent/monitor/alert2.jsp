@@ -9,7 +9,7 @@
 	//*******************************//
 	//   DECLARACAO DAS VARIAVEIS    //
 	//*******************************//
-	Vector<String> funcvet = new Vector<String>();
+	Vector funcvet = new Vector();
 	String query = "";
 	ResultSet rs;
 	java.text.SimpleDateFormat sdf_hora = new java.text.SimpleDateFormat(
