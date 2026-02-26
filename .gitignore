@@ -1,16 +1,48 @@
-# Compiled class file
+# Compiled class files
 *.class
 *.snap
 
-# Log file
+# Log files
 *.log
+
+# Archives
+*.zip
+
+# Java web archives (deploy artifacts)
 *.war
+*.ear
 
+# Build output
+build/
+target/
+dist/
+out/
+bin/
 
-.metadata/*
-
-.gitignore
-
+# Eclipse metadata
 .metadata/
 .metadata/**/
 .recommenders/
+.settings/
+.externalToolBuilders/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+
+# HSQLDB runtime files (auto-generated DB state)
+*.script
+*.data
+*.backup
+*.lck
+CRMDB.tmp/
+CRMDB.properties
+CRMDB.log
+
+# Windows-origin workspace artifact
+C:/
