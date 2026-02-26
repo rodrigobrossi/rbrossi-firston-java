@@ -1,0 +1,18 @@
+[06-11-01 23:51:17,453 BRST] [main] (ERROR) br.com.crm.main.Main: Error starting application
+java.lang.ExceptionInInitializerError
+	at br.com.crm.gui.MainFrame.createGUI(MainFrame.java:214)
+	at br.com.crm.gui.MainFrame.<init>(MainFrame.java:168)
+	at br.com.crm.main.Main.main(Main.java:65)
+Caused by: java.lang.NullPointerException
+	at javax.swing.ImageIcon.<init>(ImageIcon.java:138)
+	at br.com.crm.util.CRMComponentsUtils.<clinit>(CRMComponentsUtils.java:46)
+	... 3 more
+[06-11-02 00:00:51,796 BRST] [main] (ERROR) br.com.crm.main.Main: Error starting application
+java.lang.ExceptionInInitializerError
+	at br.com.crm.gui.MainFrame.createGUI(MainFrame.java:214)
+	at br.com.crm.gui.MainFrame.<init>(MainFrame.java:168)
+	at br.com.crm.main.Main.main(Main.java:65)
+Caused by: java.lang.NullPointerException
+	at javax.swing.ImageIcon.<init>(ImageIcon.java:138)
+	at br.com.crm.util.CRMComponentsUtils.<clinit>(CRMComponentsUtils.java:46)
+	... 3 more

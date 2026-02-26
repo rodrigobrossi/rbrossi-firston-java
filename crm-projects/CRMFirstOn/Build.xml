@@ -1,0 +1,47 @@
+
+<project name="CRM-Medicamp" default="init" basedir=".">
+	<description>
+        CRM - Medicamp Build Generation
+    </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="." />
+	<property name="build" location="build" />
+	<property name="classpath" location="lib" />
+	<property name="release" location="release" />
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement location="lib/activation.jar" />
+				<pathelement location="lib/activation.jar" />
+				<pathelement location="lib/cos.jar" />
+				<pathelement location="lib/mail.jar" />
+				<pathelement location="lib/msbase.jar" />
+				<pathelement location="lib/mssqlserver.jar" />
+				<pathelement location="lib/msutil.jar" />
+				<pathelement location="lib/SERServicePool.jar" />
+			</classpath>
+		</javac>
+	</target>
+	<target name="release" depends="compile" description="generate the distribution">
+		<jar destfile="${release}/CRM-Medicamp.jar" basedir="${build}" >
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<section name="br/com/crm/gui/Main.class">
+					<attribute name="Sealed" value="false" />
+				</section>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${release} directory trees -->
+	</target>
+</project>

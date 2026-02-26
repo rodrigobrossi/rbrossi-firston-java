@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>Didaxis EM</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!--<security-constraint> <web-resource-collection> <web-resource-name>Protected 
+		Area</web-resource-name> <url-pattern>/contextAdmin/*</url-pattern> <http-method>DELETE</http-method> 
+		<http-method>GET</http-method> <http-method>POST</http-method> <http-method>PUT</http-method> 
+		</web-resource-collection> <auth-constraint> <role-name>admin</role-name> 
+		</auth-constraint> </security-constraint> -->
+	<context-param>
+		<param-name>jdbcDriver</param-name>
+		<param-value>com.microsoft.jdbc.sqlserver.SQLServerDriver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jdbcURL</param-name>
+		<param-value>jdbc:sqlserver://localhost:1433;databaseName=didaxisem_marelli_01_prod</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jdbcUserName</param-name>
+		<param-value>USER</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jdbcPassword</param-name>
+		<param-value>366684</param-value>
+	</context-param>
+	<context-param>
+		<param-name>minimumConnections</param-name>
+		<!-- minimo de conexoes -->
+		<param-value>1</param-value>
+	</context-param>
+	<context-param>
+		<param-name>maximumConnections</param-name>
+		<param-value>15</param-value>
+	</context-param>
+	<!--Configuraçoes de Conexoes -->
+	<context-param>
+		<param-name>emailSuporte</param-name>
+		<param-value>rodrigobrossi@hotmail.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>clima</param-name>
+		<param-value>N</param-value>
+	</context-param>
+	<context-param>
+		<param-name>barra</param-name>
+		<param-value>N</param-value>
+	</context-param>
+	<!--Inicializa a conexão -->
+	<!-- listener> <listener-class>ser.web.InitializeConnectionPool</listener-class> 
+		</listener -->
+	<!--Inicializa a conexão -->
+	<servlet>
+		<servlet-name>FOExitBean</servlet-name>
+		<servlet-class>firston.eval.components.FOExitBean</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FOQuestionControll</servlet-name>
+		<servlet-class>firston.eval.webclient.FOQuestionControll</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FOQuestionControll</servlet-name>
+		<url-pattern>/FOQuestionControll</url-pattern>
+	</servlet-mapping>
+	<!--login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Admin</realm-name>
+	</login-config -->
+</web-app>

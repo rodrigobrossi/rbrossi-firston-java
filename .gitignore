@@ -25,6 +25,16 @@ bin/
 .recommenders/
 .settings/
 .externalToolBuilders/
+.classpath
+.project
+.cvsignore
+.fbprefs
+
+# Windows thumbnails
+Thumbs.db
+
+# GitHub Actions automation logs
+.github/java-upgrade/*/logs/
 
 # macOS
 .DS_Store
@@ -43,6 +53,13 @@ bin/
 CRMDB.tmp/
 CRMDB.properties
 CRMDB.log
+lib.properties
+
+# HSQLDB embedded distribution (not needed in source control)
+hsqldb-2.4.1/
+
+# Binary release artifacts
+release/
 
 # Windows-origin workspace artifact
 C:/
