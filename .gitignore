@@ -5,8 +5,11 @@
 # Log files
 *.log
 
-# Archives
+# Archives / downloaded binaries
 *.zip
+*.tar.gz
+*.gz
+maven_deps/
 
 # Java web archives (deploy artifacts)
 *.war
